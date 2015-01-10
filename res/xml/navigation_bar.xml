@@ -84,6 +84,5 @@
             android:title="@string/pulse_settings"
             android:summary="@string/pulse_settings_summary"
             android:fragment="com.armory.settings.ui.PulseSettings" />
-
     </PreferenceCategory>
 </PreferenceScreen>
