@@ -17,4 +17,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+	android:key="double_tap_sleep_gesture"
+	android:title="@string/statusbar_dt2s_title"
+	android:summary="@string/statusbar_dt2s_summary" />
+
 </PreferenceScreen>
