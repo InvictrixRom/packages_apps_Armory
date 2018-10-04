@@ -22,21 +22,6 @@
 		android:key="statusbar_settings"
 		android:title="@string/buttons_settings_title"/>
 
-<!--	<PreferenceScreen
-		android:fragment="com.armory.settings.ui.LightsSettings"
-		android:key="lights_settings"
-		android:title="@string/lights_settings_title"/>
--->
-
-        <Preference
-            android:key="device_extras_category"
-            android:title="@string/device_extras_title"
-            android:summary="@string/device_extras_summary" >
-            <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
-                android:targetPackage="@string/device_extras_target_package"
-                android:targetClass="@string/device_extras_target_class" />
-        </Preference>
-
 	<PreferenceScreen
 		android:fragment="com.armory.settings.ui.LockScreenSettings"
 		android:key="lockscreen_settings"

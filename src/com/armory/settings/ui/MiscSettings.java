@@ -27,33 +27,12 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
 
-public class MiscSettings extends InvictrixSettingsFragment implements OnPreferenceChangeListener {
-
-    public static String HEADSET_KEY = "headset_connect_player";
-    private ListPreference headsetPreference;
-    private ContentResolver resolver;
+public class MiscSettings extends InvictrixSettingsFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         title = getResources().getString(R.string.misc_settings_title);
         addPreferencesFromResource(R.xml.settings_misc);
-
-        resolver = getActivity().getContentResolver();
-
-        headsetPreference = (ListPreference) findPreference(HEADSET_KEY);
-        int headsetValue = Settings.System.getInt(resolver, HEADSET_KEY, 0);
-        headsetPreference.setValue(Integer.toString(headsetValue));
-        headsetPreference.setSummary(headsetPreference.getEntry());
-        headsetPreference.setOnPreferenceChangeListener(this);
     }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        int value = Integer.parseInt((String) newValue);
-	headsetPreference.setSummary(headsetPreference.getEntries()[value]);
-	Settings.System.putInt(resolver, HEADSET_KEY, value);
-        return true;
-    }
-
 }

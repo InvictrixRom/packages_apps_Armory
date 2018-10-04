@@ -17,45 +17,4 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.android.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_footer_warnings"
-        android:title="@string/qs_footer_warnings_title"
-        android:summary="@string/qs_footer_warnings_summary"
-        android:defaultValue="false" />
-
-    <PreferenceScreen
-        android:key="qs_rows_columns"
-        android:fragment="com.armory.settings.QsRowsColumns"
-        android:title="@string/qs_rows_columns_title" />
-
-    <com.android.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_tile_title_visibility"
-            android:title="@string/qs_tile_title_visibility_title"
-            android:defaultValue="true" />
-
-    <PreferenceCategory
-        android:key="quick_settings_animations"
-        android:title="@string/qs_animation_options_title"/>
-
-        <ListPreference
-            android:key="qs_tile_animation_style"
-            android:title="@string/qs_tile_animation_style_title"
-            android:entries="@array/qs_tile_animation_style_entries"
-            android:entryValues="@array/qs_tile_animation_style_values"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="qs_tile_animation_duration"
-            android:title="@string/qs_tile_animation_duration_title"
-            android:entries="@array/qs_tile_animation_duration_entries"
-            android:entryValues="@array/qs_tile_animation_duration_values"
-            android:persistent="false" />
-
-        <ListPreference
-            android:key="qs_tile_animation_interpolator"
-            android:title="@string/qs_tile_animation_interpolator_title"
-            android:entries="@array/qs_tile_animation_interpolator_entries"
-            android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:persistent="false" />
-
 </PreferenceScreen>

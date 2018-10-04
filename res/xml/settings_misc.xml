@@ -17,42 +17,4 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-	<ListPreference 
-		android:key="headset_connect_player"
-		android:title="@string/headset_title"
-		android:entries="@array/headset_names"
-		android:entryValues="@array/headset_values"/>
-
-	<com.android.settings.preferences.GlobalSettingSwitchPreference
-		android:key="heads_up_notifications_enabled"
-		android:title="@string/heads_up_notifications_enabled_title"
-		android:defaultValue="false" />
-
-	<com.android.settings.preferences.SystemSettingSwitchPreference
-		android:key="less_boring_heads_up"
-		android:title="@string/less_boring_heads_up_title"
-		android:summary="@string/less_boring_heads_up_summary"
-		android:defaultValue="false" />
-
-	<PreferenceScreen
-                android:key="expanded_desktop_category"
-                android:title="@string/expanded_desktop_title"
-                android:fragment="com.armory.settings.ui.ExpandedDesktop"/>
-
-    <com.android.settings.preferences.SystemSettingSwitchPreference
-        android:key="wake_when_plugged_or_unplugged"
-        android:title="@string/wake_when_plugged_or_unplugged_title"
-        android:summary="@string/wake_when_plugged_or_unplugged_summary"
-        android:defaultValue="false" />
-
-    <com.android.settings.preferences.SystemSettingSwitchPreference
-        android:key="vibration_on_charge_state_changed"
-        android:title="@string/vibration_on_charge_state_changed_title"
-        android:summary="@string/vibration_on_charge_state_changed_summary"
-        android:defaultValue="true" />
-
-    <PreferenceScreen
-        android:key="power_menu"
-        android:title="@string/powermenu_title"
-        android:fragment="com.armory.settings.ui.PowerMenu"/>
 </PreferenceScreen>

@@ -25,19 +25,11 @@ import com.android.settings.R;
 import com.armory.settings.ui.InvictrixSettingsFragment;
 
 public class MainActivity extends InvictrixSettingsFragment {
-	private static final String DEVICE_CATEGORY = "device_extras_category";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         title = getResources().getString(R.string.main_settings_title);
         addPreferencesFromResource(R.xml.settings_main);
-
-        // filter out device extras if not enabled by device
-        if (!getResources().getBoolean(R.bool.has_device_extras)) {
-        	PreferenceScreen prefScreen = getPreferenceScreen();
-        	Preference deviceExtras = prefScreen.findPreference(DEVICE_CATEGORY);
-        	prefScreen.removePreference(deviceExtras);
-        }
     }
 }

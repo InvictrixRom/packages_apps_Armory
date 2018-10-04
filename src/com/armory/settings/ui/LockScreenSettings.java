@@ -23,7 +23,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
 
-public class LockScreenSettings extends InvictrixSettingsFragment implements OnPreferenceChangeListener {
+public class LockScreenSettings extends InvictrixSettingsFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,10 +31,4 @@ public class LockScreenSettings extends InvictrixSettingsFragment implements OnP
         title = getResources().getString(R.string.lockscreen_settings_title);
         addPreferencesFromResource(R.xml.settings_lockscreen);
     }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return true;
-    }
-
 }

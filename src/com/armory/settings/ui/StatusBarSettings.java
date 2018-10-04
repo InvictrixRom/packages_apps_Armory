@@ -24,35 +24,14 @@ import android.provider.Settings;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
-import com.android.settings.preferences.CustomSeekBarPreference;
 import com.android.settings.R;
 
-public class StatusBarSettings extends InvictrixSettingsFragment implements OnPreferenceChangeListener {
-
-    public static String NETWORK_TRAFFIC_KEY = "network_traffic_autohide_threshold";
-
-    private ContentResolver resolver;
-    private CustomSeekBarPreference mThreshold;
+public class StatusBarSettings extends InvictrixSettingsFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         title = getResources().getString(R.string.statusbar_settings_title);
         addPreferencesFromResource(R.xml.settings_statusbar);
-
-        resolver = getActivity().getContentResolver();
-
-        int value = Settings.System.getIntForUser(resolver, NETWORK_TRAFFIC_KEY, 1, UserHandle.USER_CURRENT);
-        mThreshold = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_KEY);
-        mThreshold.setValue(value);
-        mThreshold.setOnPreferenceChangeListener(this);
     }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        int val = (Integer) newValue;
-        Settings.System.putIntForUser(resolver, NETWORK_TRAFFIC_KEY, val, UserHandle.USER_CURRENT);
-        return true;
-    }
-
 }
