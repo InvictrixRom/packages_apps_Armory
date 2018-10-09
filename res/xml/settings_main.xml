@@ -33,7 +33,7 @@
 		android:title="@string/misc_settings_title"/>
 
 	<PreferenceScreen
-		android:fragment="com.armory.settings.ui.NavigationBarSettings"
+		android:fragment="com.android.settings.smartnav.NavigationBarSettings"
 		android:key="navigationbar_settings"
 		android:title="@string/navigationbar_settings_title"/>
 
