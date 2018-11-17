@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
         <string name="main_settings_title">Armory</string>
 
         <string name="buttons_settings_title">Buttons</string>
@@ -83,4 +84,8 @@
     <!-- SystemUI Tuner -->
     <string name="systemui_tuner_title">SystemUI Tuner</string>
     <string name="systemui_tuner_summary">Experimental SystemUI Tweaks</string>
+
+    <!-- Lock screen visualizer -->
+    <string name="lockscreen_visualizer_title">Music visualizer</string>
+    <string name="lockscreen_visualizer_summary">Toggles visualizer display on lockscreen</string>
 </resources>

@@ -31,17 +31,23 @@ public class LockScreenSettings extends InvictrixSettingsFragment implements
         Preference.OnPreferenceChangeListener {
 
 	SwitchPreference mDoubleTapToSleepAnywhere;
-	
+        SwitchPreference mLockscreenVisualizer;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         title = getResources().getString(R.string.lockscreen_settings_title);
         addPreferencesFromResource(R.xml.settings_lockscreen);
-		
+
         mDoubleTapToSleepAnywhere = (SwitchPreference) findPreference("double_tap_sleep_anywhere");
         mDoubleTapToSleepAnywhere.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, 0) == 1);
         mDoubleTapToSleepAnywhere.setOnPreferenceChangeListener(this);
+
+        mLockscreenVisualizer = (SwitchPreference) findPreference("lockscreen_visualizer");
+        mLockscreenVisualizer.setChecked(Settings.Secure.getInt(getContentResolver(),
+                Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 0) == 1);
+        mLockscreenVisualizer.setOnPreferenceChangeListener(this);
 
     }
 
@@ -51,6 +57,12 @@ public class LockScreenSettings extends InvictrixSettingsFragment implements
             boolean enabled = ((Boolean) newValue).booleanValue();
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOUBLE_TAP_SLEEP_ANYWHERE, enabled ? 1 : 0);
+            return true;
+        }
+        if (preference.equals(mLockscreenVisualizer)) {
+            boolean enabled = ((Boolean) newValue).booleanValue();
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, enabled ? 1 : 0);
             return true;
         }
         return false;
