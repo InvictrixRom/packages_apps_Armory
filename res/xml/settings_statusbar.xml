@@ -18,6 +18,13 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/statusbar_settings_title">
 
+    <PreferenceScreen
+        android:key="clock_options_category"
+        android:icon="@drawable/dt_clock_options"
+        android:title="@string/clock_options_title"
+        android:summary="@string/clock_options_summary"
+        android:fragment="com.armory.settings.ui.ClockOptions" />
+
     <SwitchPreference
 	android:key="double_tap_sleep_gesture"
 	android:title="@string/statusbar_dt2s_title"

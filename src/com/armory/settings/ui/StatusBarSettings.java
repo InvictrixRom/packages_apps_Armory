@@ -25,11 +25,14 @@ import android.support.v7.preference.Preference;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 
+import com.android.internal.logging.nano.MetricsProto;
+
 import com.android.settings.R;
 
 public class StatusBarSettings extends InvictrixSettingsFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String CLOCK_CATEGORY = "clock_options_category";
     SwitchPreference mDoubleTapToSleepEnabled;
 
     @Override
@@ -43,6 +46,11 @@ public class StatusBarSettings extends InvictrixSettingsFragment implements
                 Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1);
         mDoubleTapToSleepEnabled.setOnPreferenceChangeListener(this);
 
+        Preference ClockOptions = findPreference(CLOCK_CATEGORY);
+        if (!getResources().getBoolean(R.bool.has_clock_options)) {
+            getPreferenceScreen().removePreference(ClockOptions);
+        }
+
     }
 
     @Override
@@ -54,5 +62,9 @@ public class StatusBarSettings extends InvictrixSettingsFragment implements
             return true;
         }
         return false;
+    }
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.INVICTRIX;
     }
 }
